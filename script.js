@@ -7,7 +7,7 @@ $("#city-form").submit(function(event){
 });
 
 function getWeather(city){
-    $.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=7fc47b3ccb638da06477edc61fd72299", function(data){
+    $.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=7fc47b3ccb638da06477edc61fd72299", function(data){
       console.log(data);
 
         $("#city").html(data.main.name);
@@ -20,7 +20,7 @@ function getWeather(city){
 
 
 
-    $.get("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&appid=7fc47b3ccb638da06477edc61fd72299", function(data){
+    $.get("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&appid=7fc47b3ccb638da06477edc61fd72299", function(data){
     console.log(data);
 
   var dayOne = moment().format("M/D/YYYY");
