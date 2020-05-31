@@ -7,12 +7,14 @@ $("#city-form").submit(function(event){
 });
 
 function getWeather(city){
-    $.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=7fc47b3ccb638da06477edc61fd72299", function(data){
+
+  
+    $.ajax("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid=7fc47b3ccb638da06477edc61fd72299", function(data){
       console.log(data);
 
         $("#city").html(data.main.name);
         $("#description").html(data.weather[0].description);
-        $("#icon").html("<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>");
+        $("#icon").html("<img src='https://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>");
         $("#temp").html("Temperatue: " + data.main.temp + " °F");
         $("#humidity").html("Humidity: " + data.main.humidity + "%");
         $("#speed").html("Wind Speed: " + data.wind.speed + " mph");
